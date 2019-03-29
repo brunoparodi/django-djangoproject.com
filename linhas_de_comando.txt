@@ -1,0 +1,19 @@
+# criando um projeto
+django-admin startproject mysite
+
+# verificando se o servidor de desenvolvimento funciona. executar de dentro do diretorio do nome do projeto
+# Por padrão, o comando runserver inicia o servidor de desenvolvimento no IP interno na porta http://127.0.0.1:8000/.
+# py manage.py runserver 8080 > http://127.0.0.1:8080/ || py manage.py runserver 0:8080 > http://0.0.0.0:8080/
+py manage.py runserver
+
+# criar um app chamado polls
+py manage.py startapp polls
+
+# criar tabelas do mysite.settings/INSTALLED_APPS no banco de dados
+python manage.py migrate
+
+# você está dizendo Django que você fez algumas mudanças em seus modelos e CRIA AS MIGRAÇÕES
+py manage.py makemigrations polls
+
+# rodando novamente o comando, Django verifica quais migrações ainda não foram aplicadas, e APLICA AS MIGRAÇÕES
+python manage.py migrate
